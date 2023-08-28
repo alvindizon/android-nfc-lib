@@ -112,58 +112,58 @@ build.doLast {
 /**
  * Maven publishing info
  */
-
-signing {
-    required { gradle.taskGraph.hasTask("uploadArchives") }
-    sign configurations.archives
-}
-def coreAarFile = file('build/outputs/aar/nfclib.aar')
-artifacts {
-    archives coreAarFile
-}
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "file:///Users/daneo/.m2/repository")
-
-            pom.project {
-                name 'AppFoundry\'s NFC Lib '
-                groupId 'be.appfoundry'
-                artifactId 'nfc-lib'
-                packaging 'aar'
-                version '1.0'
-                organization {
-                    name 'AppFoundry'
-                    url 'http://www.appfoundry.be'
-                }
-                url 'http://dproductions.be/mvn'
-                // optionally artifactId can be defined here
-                description 'NFC Library meant to facilitate the use of NFC on the Android platform'
-
 //
-//                scm {
-//                    connection 'scm:svn:http://foo.googlecode.com/svn/trunk/'
-//                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
-//                    url 'http://foo.googlecode.com/svn/trunk/'
+//signing {
+//    required { gradle.taskGraph.hasTask("uploadArchives") }
+//    sign configurations.archives
+//}
+//def coreAarFile = file('build/outputs/aar/nfclib.aar')
+//artifacts {
+//    archives coreAarFile
+//}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//            repository(url: "file:///Users/daneo/.m2/repository")
+//
+//            pom.project {
+//                name 'AppFoundry\'s NFC Lib '
+//                groupId 'be.appfoundry'
+//                artifactId 'nfc-lib'
+//                packaging 'aar'
+//                version '1.0'
+//                organization {
+//                    name 'AppFoundry'
+//                    url 'http://www.appfoundry.be'
 //                }
-
-                developers {
-                    developer {
-                        id 'daneov'
-                        name 'Daneo van Overloop'
-                        roles{
-                            role 'developer'
-                        }
-                        organization {
-                            name 'AppFoundry'
-                        }
-                        email 'daneo.vanoverloop@ida-mediafoundry.be'
-                    }
-                }
-            }
-        }
-    }
-}
-
+//                url 'http://dproductions.be/mvn'
+//                // optionally artifactId can be defined here
+//                description 'NFC Library meant to facilitate the use of NFC on the Android platform'
+//
+////
+////                scm {
+////                    connection 'scm:svn:http://foo.googlecode.com/svn/trunk/'
+////                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
+////                    url 'http://foo.googlecode.com/svn/trunk/'
+////                }
+//
+//                developers {
+//                    developer {
+//                        id 'daneov'
+//                        name 'Daneo van Overloop'
+//                        roles{
+//                            role 'developer'
+//                        }
+//                        organization {
+//                            name 'AppFoundry'
+//                        }
+//                        email 'daneo.vanoverloop@ida-mediafoundry.be'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+//
