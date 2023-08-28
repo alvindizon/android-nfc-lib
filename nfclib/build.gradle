@@ -43,11 +43,12 @@ apply plugin: 'signing'
 //}
 
 android {
-
+    compileSdkVersion 29
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 34
-        compileSdkVersion 34
+        targetSdkVersion 29
+        versionCode 12
+        versionName "1.2"
     }
     buildTypes {
         release {
